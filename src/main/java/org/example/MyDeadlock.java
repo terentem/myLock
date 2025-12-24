@@ -27,7 +27,7 @@ public class MyDeadlock {
         Runnable runnable2 = new Runnable() {
             @Override
             public void run() {
-                synchronized (pingPong2) { // 1. Захватили монитор 2
+                synchronized (pingPong2) {
                     System.out.println("створення thin lock для pingPong2 ");
                     try {
                         Thread.sleep(100);
