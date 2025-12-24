@@ -18,7 +18,7 @@ public class MyDeadlock {
                         throw new RuntimeException(e);
                     }
                     synchronized (pingPong2) {
-                        System.out.println("поток а викликає pingPong2 і створює для нього fat lock. Виконання наступного коду неможливе. Потік а переходить в EntryList.");
+                        System.out.println("поток t1 викликає pingPong2 і створює для нього fat lock. Виконання наступного коду неможливе. Потік а переходить в EntryList.");
                         System.out.println(pingPong2.getString2());
                     }
                 }
@@ -36,7 +36,7 @@ public class MyDeadlock {
                     }
                     synchronized (pingPong1) {
                         System.out.println("створення fat lock для pingPong1. Тепер pingPong1 заблоковано для виконання наступного коду." +
-                                "Поток в переходить в EntryList поки не звільниться pingPong1 ");
+                                "Поток t2 переходить в EntryList поки не звільниться pingPong1 ");
                         System.out.println(pingPong1.getString2());
                     }
                 }
