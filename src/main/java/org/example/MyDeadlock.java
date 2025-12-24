@@ -6,11 +6,9 @@ public class MyDeadlock {
     public static void main(String[] args) throws InterruptedException {
         PingPong pingPong1 = new PingPong();
         PingPong pingPong2 = new PingPong();
-
         Runnable runnable1 = new Runnable() {
             @Override
             public void run() {
-
                 synchronized (pingPong1) {
                     System.out.println("блокую pingPong1 на thin lock. Доступ до pingPong1 ще є");
                     System.out.println(pingPong1.getString1() + "first ping");
